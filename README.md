@@ -3,6 +3,8 @@ A simple, markdown-based website.
 
 This is a place for me to test out a very simple method of deploying a static HTML site with pages written in markdown. Think like Jekyll or Hugo but much "dumber".
 
+The demo site can be found [here][demo site] and is completely unstyled and has no javascript.
+
 For my actual website source see [this repo][1].
 
 ## How it works
@@ -41,3 +43,4 @@ Things I may or may not do:
 
    [1]: https://github.com/Perfect5th/perfect5th.github.io "Perfect5th's Personal Site Repo"
    [2]: https://daringfireball.net/projects/markdown/ "Daring Fireball Markdown Project Page"
+   [demo site]: https://mitchellburton.ca/simple-site "Demo Site"

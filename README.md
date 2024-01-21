@@ -20,6 +20,14 @@ respectively.
 
 If you need more than one file, either get clever or edit `./templates/base.html` or `./templates/close.html`.
 
+## Testing locally
+
+Make sure you have `markdown` installed. You can get it from [the Markdown Homepage][2] or your favourite package manager probably.
+Make sure you have a POSIX shell of some kind.
+
+Execute `./convert.sh`, which builds your site in `_site`. You can then serve this directory however you see fit – use the `file://`
+protocol in your browser or a simple server like `python3 -m http.server`.
+
 Things I may or may not do:
   * templates, or at least a bit more customization
   * github pages serving (DONE)
@@ -28,3 +36,4 @@ Things I may or may not do:
   * tbd
 
    [1]: https://github.com/Perfect5th/perfect5th.github.io "Perfect5th's Personal Site Repo"
+   [2]: https://daringfireball.net/projects/markdown/ "Daring Fireball Markdown Project Page"

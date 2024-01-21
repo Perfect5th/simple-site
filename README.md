@@ -15,7 +15,7 @@ For my actual website source see [this repo][1].
 ## Custom CSS and Javascript
 
 For those of you who really want to feel the pain, put your css files in `./css` and your javascript in `./js`.
-Both will get deployed with your static site and loaded for every page.
+Both will get deployed with your static site and loaded for every page. Similarly, make sure they end with `.css` and `.js`, respectively.
 
 Things I may or may not do:
   * templates

@@ -5,6 +5,8 @@
 
 FILES=$(find ./markdown -type f -name '*.md')
 
+mkdir -p ./_site
+
 for FILE in $FILES; do
     HTML_PATH=$(echo "$FILE" | sed -e 's/\.md$/\.html/' | sed -e 's/^\.\/markdown/\.\/_site/')
     echo "Creating $HTML_PATH"

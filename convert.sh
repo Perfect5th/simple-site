@@ -14,3 +14,6 @@ for FILE in $FILES; do
     markdown --html4tags "$FILE" >> "$HTML_PATH"
     cat ./templates/close.html >> "$HTML_PATH"
 done
+
+cp ./css/base.css ./_site/base.css
+cp ./js/main.js ./_site/main.js

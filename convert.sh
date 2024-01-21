@@ -1,20 +1,40 @@
 #!/usr/bin/env sh
 
-# A simple-site converted. Wraps the html produced from markdown in a few tags
+# A simple-site convertor. Wraps the html produced from markdown in a few tags
 # to make it web-servable.
+
+. ./env
 
 FILES=$(find ./markdown -type f -name '*.md')
 
 rm -rf ./_site
-mkdir -p ./_site
+
+convert_file() {
+    HTML_PATH=$(echo "$1" | sed -e 's/\.md$/\.html/' | sed -e 's/^\.\/markdown/\.\/_site/')
+
+    mkdir -p "$(dirname "$HTML_PATH")"
+
+    FIRST_LINE=$(head -n 1 "$1")
+
+    if echo "$FIRST_LINE" | grep -q '^# '; then
+        PAGE_TITLE=$(echo "$FIRST_LINE" | cut -c3-)
+    else
+        PAGE_TITLE=$SITE_TITLE
+    fi
+
+    echo "Creating $HTML_PATH"
+    sed -e "s:{{SITE_ROOT}}:$SITE_ROOT:g" ./templates/base.html | \
+        sed -e "s:{{PAGE_TITLE}}:$PAGE_TITLE:g" \
+        > "$HTML_PATH"
+    markdown --html4tags "$1" >> "$HTML_PATH"
+    cat ./templates/close.html >> "$HTML_PATH"
+}
 
 for FILE in $FILES; do
-    HTML_PATH=$(echo "$FILE" | sed -e 's/\.md$/\.html/' | sed -e 's/^\.\/markdown/\.\/_site/')
-    echo "Creating $HTML_PATH"
-    sed -e "s:{{SITE_ROOT}}:$SITE_ROOT:g" ./templates/base.html > "$HTML_PATH"
-    markdown --html4tags "$FILE" >> "$HTML_PATH"
-    cat ./templates/close.html >> "$HTML_PATH"
+    convert_file "$FILE" &
 done
+
+wait
 
 mkdir -p ./_site/css
 mkdir -p ./_site/js

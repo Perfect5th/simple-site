@@ -11,7 +11,10 @@ For my actual website source see [this repo][1].
 2. Make sure github pages is turned on and the source is set to "Github Actions"
 3. Put your markdown files in `./markdown`, make sure they end with `.md`
 4. Replace the `favicon.ico` of my face with your own, or delete it
-5. Commit them and push
+5. Change `SITE_ROOT` in `./env` to match where your site will be served
+6. Commit and push
+
+**Note**: If your markdown file starts with a H1 header, That header will also be used as the title of the page.
 
 ## Custom CSS and Javascript
 

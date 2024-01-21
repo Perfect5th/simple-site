@@ -5,6 +5,7 @@
 
 FILES=$(find ./markdown -type f -name '*.md')
 
+rm -rf ./_site
 mkdir -p ./_site
 
 for FILE in $FILES; do
@@ -15,5 +16,8 @@ for FILE in $FILES; do
     cat ./templates/close.html >> "$HTML_PATH"
 done
 
-cp ./css/base.css ./_site/base.css
-cp ./js/main.js ./_site/main.js
+mkdir -p ./_site/css
+mkdir -p ./_site/js
+cp ./css/base.css ./_site/css/base.css
+cp ./js/main.js ./_site/js/main.js
+cp ./favicon.ico ./_site/favicon.ico

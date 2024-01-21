@@ -10,7 +10,8 @@ For my actual website source see [this repo][1].
 1. Fork this repo
 2. Make sure github pages is turned on and the source is set to "Github Actions"
 3. Put your markdown files in `./markdown`, make sure they end with `.md`
-4. Commit them and push
+4. Replace the `favicon.ico` of my face with your own, or delete it
+5. Commit them and push
 
 ## Custom CSS and Javascript
 

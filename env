@@ -1,3 +1,5 @@
-export SITE_ROOT="/simple-site"
-export SITE_TITLE="Simple Site"
-export CRUMBS="YES"
+[ -z "$SITE_ROOT" ] && export SITE_ROOT="/simple-site"
+[ -z "$SITE_TITLE" ] && export SITE_TITLE="Simple Site"
+[ -z "$CRUMBS" ] && export CRUMBS="YES"
+
+[ "$SITE_ROOT" = "/" ] && export SITE_ROOT=""

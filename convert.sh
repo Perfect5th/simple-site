@@ -62,7 +62,6 @@ wait
 mkdir -p ./_site/css
 mkdir -p ./_site/js
 mkdir -p ./_site/fonts
-cp ./css/base.css ./_site/css/base.css
-cp ./js/main.js ./_site/js/main.js
-cp ./favicon.ico ./_site/favicon.ico
+sed -e "s:{{SITE_ROOT}}:$SITE_ROOT:g" ./css/base.css > ./_site/css/base.css
+sed -e "s:{{SITE_ROOT}}:$SITE_ROOT:g" ./js/main.js > ./_site/js/main.js
 cp ./fonts/* ./_site/fonts/ || true

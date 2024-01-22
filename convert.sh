@@ -11,12 +11,14 @@ rm -rf ./_site
 
 generate_crumbs() {
     HTML_PATH="$1"
-    PARTS=$(echo "$HTML_PATH" |  sed -e 's/\(\/index\)\.html$//' | cut -d'/' -f3- | sed -e 's/\// /g')
+    ROOT="/"
+    [ -n "$SITE_ROOT" ] && ROOT="$SITE_ROOT"
+    PARTS=$(echo "$HTML_PATH" |  sed -e 's/\(\/index\)\?\.html$//' | cut -d'/' -f3- | sed -e 's/\// /g')
 
     echo '<nav class="crumbs"><ol>' >> "$HTML_PATH"
 
-    FULL_PATH="$SITE_ROOT"
-    printf '<li class="crumb"><a href="%s">Home</a></li>' "$SITE_ROOT" >> "$HTML_PATH"
+    FULL_PATH="$ROOT"
+    printf '<li class="crumb"><a href="%s">Home</a></li>' "$ROOT" >> "$HTML_PATH"
     for PART in $PARTS; do
         FULL_PATH="$FULL_PATH/$PART"
         printf '<li class="crumb"><a href="%s">%s</a></li>' "$FULL_PATH" "$PART" >> "$HTML_PATH"

@@ -42,4 +42,4 @@ mkdir -p ./_site/fonts
 cp ./css/base.css ./_site/css/base.css
 cp ./js/main.js ./_site/js/main.js
 cp ./favicon.ico ./_site/favicon.ico
-cp ./fonts/* ./_site/fonts/
+cp ./fonts/* ./_site/fonts/ || true

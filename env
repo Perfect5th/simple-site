@@ -1,2 +1,3 @@
 export SITE_ROOT="/simple-site"
 export SITE_TITLE="Simple Site"
+export CRUMBS="YES"

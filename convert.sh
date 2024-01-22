@@ -43,7 +43,9 @@ convert_file() {
         sed -e "s:{{PAGE_TITLE}}:$PAGE_TITLE:g" \
         > "$HTML_PATH"
 
-    generate_crumbs "$HTML_PATH"
+    if [ "$CRUMBS" = "YES" ]; then
+        generate_crumbs "$HTML_PATH"
+    fi
 
     markdown --html4tags "$1" >> "$HTML_PATH"
     cat ./templates/close.html >> "$HTML_PATH"

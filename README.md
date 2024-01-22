@@ -16,6 +16,8 @@ For my actual website source see [this repo][1].
 5. Change `SITE_ROOT` in `./env` to match where your site will be served
 6. Commit and push
 
+If you don't want the generated breadcrumbs, change (or delete) `CRUMBS` in `./env`.
+
 **Note**: If your markdown file starts with a H1 header, That header will also be used as the title of the page.
 
 ## Custom CSS and Javascript

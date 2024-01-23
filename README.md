@@ -29,6 +29,8 @@ For those of you who really want to feel the pain, put your css in `./css/base.c
 Both will get deployed with your static site and loaded for every page. Similarly, make sure they end with `.css` and `.js`,
 respectively.
 
+There is a `perfect5th.css` file in the `css` folder you can move the contents into `base.css` to have some basic styles.
+
 If you need more than one file, either get clever or edit `./templates/base.html` or `./templates/close.html`.
 
 ## Testing locally

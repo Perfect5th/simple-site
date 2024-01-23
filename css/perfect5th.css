@@ -1,0 +1,122 @@
+@font-face {
+    font-family: "bagnardregular";
+    src: url("{{SITE_ROOT}}/fonts/bagnard-webfont.woff2") format("woff2"),
+         url("{{SITE_ROOT}}/fonts/bagnard-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+
+html {
+    color: #404040;
+    line-height: 1.6em;
+    background-color: gainsboro;
+    font-family: "bagnardregular", serif;
+}
+
+body {
+    margin: auto;
+    width: 60%;
+    max-width: 1000px;
+    min-width: 200px;
+}
+
+pre {
+    background-color: #404040;
+    border-color: black;
+    border-style: solid;
+    border-width: 0 0 1em 0;
+    border-radius: 0.5em;
+    color: gainsboro;
+    padding: 1em;
+}
+
+code {
+    font-family: "Ubuntu Mono", monospace;
+}
+
+blockquote {
+    background-color: #cecece;
+    border-left: 4px solid grey;
+    margin: 0;
+}
+
+blockquote p {
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+nav {
+    border-bottom: 1px solid black;
+}
+
+.crumbs ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.crumb {
+    display: inline-block;
+}
+
+.crumb a::after {
+    display: inline-block;
+    color: black;
+    content: ">";
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 0 3px;
+}
+
+.crumb:last-child a::after {
+    display: none;
+}
+
+footer {
+    text-align: right;
+    border-top: 1px solid black;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color: gainsboro;
+        background-color: #404040;
+    }
+
+    pre {
+        background-color: gainsboro;
+        border-color: white;
+        color: #404040;
+    }
+
+    blockquote {
+        background-color: #3a3a3a;
+        border-color: gainsboro;
+    }
+
+    a {
+        color: #94cdff;
+    }
+
+    a:visited {
+        color: #ffb9ff;
+    }
+
+    nav {
+        border-bottom-color: gainsboro;
+    }
+
+    .crumb a::after {
+        color: gainsboro;
+    }
+
+    footer {
+        border-top-color: gainsboro;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    body {
+        width: 85%;
+    }
+}

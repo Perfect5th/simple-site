@@ -10,11 +10,14 @@ For my actual website source see [this repo][1].
 ## How it works
 
 1. Fork this repo
-2. Make sure github pages is turned on and the source is set to "Github Actions"
-3. Put your markdown files in `./markdown`, make sure they end with `.md`
-4. Replace the `favicon.ico` of my face with your own, or delete it
-5. Change `SITE_ROOT` in `./env` to match where your site will be served
-6. Commit and push
+2. Turn on GitHub Actions for this repo: In the settings page of the new repo, go to Pages and ensure github pages is on, and the source is set to "Github Actions"
+3. Turn on the Github Action workflow for this repo: In the settings page, go to Actions > General, and select "I understand my workflows, go ahead and enable them"
+    - **Note**: you can review this workflow in the `.github/workflows` folder.
+4. Put your markdown files in `./markdown`, make sure they end with `.md`
+5. Replace the `favicon.ico` of my face with your own, or delete it
+6. Change `SITE_ROOT` in `./env` to match where your site will be served
+7. Commit and push
+
 
 If you don't want the generated breadcrumbs, change (or delete) `CRUMBS` in `./env`.
 
